@@ -20,15 +20,6 @@
 #    include "timer.h"
 #endif // CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_ENABLE
 
-enum charybdis_keymap_layers {
-    LAYER_BASE = 0,
-    LAYER_GAME,
-    LAYER_NAV,
-    LAYER_FUN,
-    LAYER_NUM,
-    LAYER_POINTER,
-};
-
 /** \brief Automatically enable sniping-mode on the pointer layer. */
 #define CHARYBDIS_AUTO_SNIPING_ON_LAYER LAYER_POINTER
 
@@ -56,14 +47,22 @@ static uint16_t auto_pointer_layer_timer = 0;
 #    define SNIPING KC_NO
 #endif // !POINTING_DEVICE_ENABLE
 
-//begin
+enum charybdis_keymap_layers {
+    LAYER_BASE = 0,
+    LAYER_GAME,
+    LAYER_NAV,
+    LAYER_FUN,
+    LAYER_NUM,
+    LAYER_POINTER,
+};
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [LAYER_BASE] = LAYOUT(
     KC_EQUAL,       KC_1,           KC_2,           KC_3,           KC_4,           KC_5,                                           KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           KC_MINUS,
     KC_TAB,         KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,                                           KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           KC_BSLS,
     KC_ESCAPE,      MT(MOD_LGUI, KC_A),MT(MOD_LALT, KC_S),MT(MOD_LSFT, KC_D),MT(MOD_LCTL, KC_F),KC_G,                               KC_H,           MT(MOD_RCTL, KC_J),MT(MOD_RSFT, KC_K),MT(MOD_RALT, KC_L),MT(MOD_RGUI, KC_SCLN),KC_QUOTE,
     KC_LEFT_SHIFT,  KC_Z,           KC_X,           KC_C,           KC_V,           KC_B,                                           KC_N,           KC_M,           KC_COMMA,       KC_DOT,         KC_SLASH,       KC_RIGHT_SHIFT,
-                                                    KC_SPACE,       LT(4, KC_DELETE), MO(LAYER_POINTER),                            LT(3, KC_BSPC), LT(2, KC_ENTER),
+                                                    KC_SPACE,       LT(LAYER_NUM, KC_DELETE), MO(LAYER_POINTER),                    LT(LAYER_FUN, KC_BSPC), LT(LAYER_NAV, KC_ENTER),
                                                     XXXXXXX, XXXXXXX,                                                               XXXXXXX
   ),
   [LAYER_GAME] = LAYOUT(
@@ -159,9 +158,6 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
             return TAPPING_TERM;
     }
 }
-
-
-//end
 
 // clang-format off
 // const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
