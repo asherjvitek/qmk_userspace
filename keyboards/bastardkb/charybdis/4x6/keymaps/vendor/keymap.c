@@ -58,52 +58,52 @@ enum charybdis_keymap_layers {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [LAYER_BASE] = LAYOUT(
-    KC_EQUAL,       KC_1,           KC_2,           KC_3,           KC_4,           KC_5,                                           KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           KC_MINUS,
-    KC_TAB,         KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,                                           KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           KC_BSLS,
-    KC_ESCAPE,      MT(MOD_LGUI, KC_A),MT(MOD_LALT, KC_S),MT(MOD_LSFT, KC_D),MT(MOD_LCTL, KC_F),KC_G,                               KC_H,           MT(MOD_RCTL, KC_J),MT(MOD_RSFT, KC_K),MT(MOD_RALT, KC_L),MT(MOD_RGUI, KC_SCLN),KC_QUOTE,
-    KC_LEFT_SHIFT,  KC_Z,           KC_X,           KC_C,           KC_V,           KC_B,                                           KC_N,           KC_M,           KC_COMMA,       KC_DOT,         KC_SLASH,       KC_RIGHT_SHIFT,
-                                                    KC_SPACE,       LT(LAYER_NUM, KC_DELETE), MO(LAYER_POINTER),                    LT(LAYER_FUN, KC_BSPC), LT(LAYER_NAV, KC_ENTER),
-                                                    XXXXXXX, XXXXXXX,                                                               XXXXXXX
+    KC_EQUAL,       KC_1,               KC_2,               KC_3,               KC_4,                     KC_5,                     KC_6,                   KC_7,                   KC_8,               KC_9,               KC_0,                  KC_MINUS,
+    KC_TAB,         KC_Q,               KC_W,               KC_E,               KC_R,                     KC_T,                     KC_Y,                   KC_U,                   KC_I,               KC_O,               KC_P,                  KC_BSLS,
+    KC_ESCAPE,      MT(MOD_LGUI, KC_A), MT(MOD_LALT, KC_S), MT(MOD_LSFT, KC_D), MT(MOD_LCTL, KC_F),       KC_G,                     KC_H,                   MT(MOD_RCTL, KC_J),     MT(MOD_RSFT, KC_K), MT(MOD_RALT, KC_L), MT(MOD_RGUI, KC_SCLN), KC_QUOTE,
+    KC_LEFT_SHIFT,  KC_Z,               KC_X,               KC_C,               KC_V,                     KC_B,                     KC_N,                   KC_M,                   KC_COMMA,           KC_DOT,             PT_SLSH,               KC_RIGHT_SHIFT,
+                                                            KC_SPACE,           LT(LAYER_NUM, KC_DELETE), MO(LAYER_POINTER),        LT(LAYER_FUN, KC_BSPC), LT(LAYER_NAV, KC_ENTER),
+                                                            DRGSCRL,            SNIPING,                                            XXXXXXX
   ),
   [LAYER_GAME] = LAYOUT(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
     KC_TAB,         KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
     KC_ESCAPE,      KC_A,           KC_S,           KC_D,           KC_F,           KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
     KC_LEFT_SHIFT,  KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
-                                                    KC_SPACE,       KC_LEFT_CTRL, KC_TRANSPARENT,                       KC_TRANSPARENT, KC_TRANSPARENT,
-                                                    KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT
+                                                    KC_SPACE,       KC_LEFT_CTRL,   KC_LEFT_ALT,                                    KC_TRANSPARENT, KC_TRANSPARENT,
+                                                    KC_TRANSPARENT, KC_TRANSPARENT,                                                 KC_TRANSPARENT
   ),
   [LAYER_NAV] = LAYOUT(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_PAGE_UP,     KC_HOME,        KC_UP,          KC_END,         KC_PAUSE,       KC_TRANSPARENT,
     KC_TRANSPARENT, KC_LEFT_GUI,    KC_LEFT_ALT,    KC_LEFT_SHIFT,  KC_LEFT_CTRL,   KC_TRANSPARENT,                                 KC_PGDN,        KC_LEFT,        KC_DOWN,        KC_RIGHT,       KC_INSERT,      KC_TRANSPARENT,
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
-                                                    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                KC_TRANSPARENT, KC_TRANSPARENT,
-                                                    KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT
+                                                    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT,
+                                                    KC_TRANSPARENT, KC_TRANSPARENT,                                                 KC_TRANSPARENT
   ),
   [LAYER_FUN] = LAYOUT(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_F10,         KC_F11,         KC_F12,         KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
     KC_TRANSPARENT, KC_TRANSPARENT, KC_F7,          KC_F8,          KC_F9,          KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
     KC_TRANSPARENT, KC_TRANSPARENT, KC_F4,          KC_F5,          KC_F6,          KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_RIGHT_CTRL,  KC_RIGHT_SHIFT, KC_RIGHT_ALT,   KC_RIGHT_GUI,   KC_TRANSPARENT,
     KC_TRANSPARENT, KC_TRANSPARENT, KC_F1,          KC_F2,          KC_F3,          KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
-                                                    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                KC_TRANSPARENT, KC_TRANSPARENT,
-                                                    KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT
+                                                    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT,
+                                                    KC_TRANSPARENT, KC_TRANSPARENT,                                                 KC_TRANSPARENT
   ),
   [LAYER_NUM] = LAYOUT(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_SLASH,       KC_ASTR,        KC_MINUS,       KC_TRANSPARENT,
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_7,           KC_8,           KC_9,           KC_PLUS,        KC_TRANSPARENT,
     KC_TRANSPARENT, KC_LEFT_GUI,    KC_LEFT_ALT,    KC_LEFT_SHIFT,  KC_LEFT_CTRL,   KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_6,           KC_5,           KC_4,           KC_ENTER,       KC_TRANSPARENT,
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_1,           KC_2,           KC_3,           KC_ENTER,       KC_TRANSPARENT,
-                                                    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                KC_TRANSPARENT, KC_0,
-                                                    KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT
+                                                    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_0,
+                                                    KC_TRANSPARENT, KC_TRANSPARENT,                                                 KC_TRANSPARENT
   ),
   [LAYER_POINTER] = LAYOUT(
-       QK_BOOT,  EE_CLR, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOT,  EE_CLR,
-       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, DPI_MOD, S_D_MOD,    S_D_MOD, DPI_MOD, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-       XXXXXXX, KC_LGUI, KC_LALT, KC_LSFT, KC_LCTL, XXXXXXX,    XXXXXXX, KC_BTN1, KC_BTN3, KC_BTN2, DRGSCRL, XXXXXXX,
-       XXXXXXX, _______, DRGSCRL, SNIPING, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, SNIPING, DRGSCRL, _______, XXXXXXX,
-                                  XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX,
-                                           XXXXXXX, XXXXXXX,    XXXXXXX
+       QK_BOOT,  EE_CLR, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                                                                        XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, QK_BOOT,  EE_CLR,
+       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, DPI_MOD, S_D_MOD,                                                                        XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX,
+       XXXXXXX, KC_LGUI, KC_LALT, KC_LSFT, KC_LCTL, XXXXXXX,                                                                        XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX,
+       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                                                                        XXXXXXX, KC_BTN1, KC_BTN3,  KC_BTN2, _______, XXXXXXX,
+                                  XXXXXXX, XXXXXXX, XXXXXXX,                                                                        DPI_MOD, DPI_RMOD,
+                                           _______, _______,                                                                        XXXXXXX
   ),
 };
 
@@ -116,16 +116,16 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM = LAYOUT(
   'L', 'L', 'R'
 );
 
-const uint16_t PROGMEM combo0[] = { LT(4, KC_DELETE), LT(3, KC_BSPC), COMBO_END};
+const uint16_t PROGMEM combo0[] = { LT(LAYER_NUM, KC_DELETE), LT(LAYER_FUN, KC_BSPC), COMBO_END};
 const uint16_t PROGMEM combo1[] = { KC_U, MT(MOD_RCTL, KC_J), COMBO_END};
 const uint16_t PROGMEM combo2[] = { KC_I, MT(MOD_RSFT, KC_K), COMBO_END};
 const uint16_t PROGMEM combo3[] = { KC_O, MT(MOD_RALT, KC_L), COMBO_END};
 const uint16_t PROGMEM combo4[] = { KC_X, KC_C, COMBO_END};
 const uint16_t PROGMEM combo5[] = { KC_C, KC_V, COMBO_END};
-const uint16_t PROGMEM combo6[] = { LT(2, KC_ENTER), KC_SPACE, COMBO_END};
+const uint16_t PROGMEM combo6[] = { LT(LAYER_NAV, KC_ENTER), KC_SPACE, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
-    COMBO(combo0, TG(1)),
+    COMBO(combo0, TG(LAYER_GAME)),
     COMBO(combo1, KC_GRAVE),
     COMBO(combo2, KC_LBRC),
     COMBO(combo3, KC_RBRC),
@@ -150,9 +150,9 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
             return TAPPING_TERM -25;
         case MT(MOD_RALT, KC_L):
             return TAPPING_TERM -25;
-        case LT(3, KC_BSPC):
+        case LT(LAYER_FUN, KC_BSPC):
             return TAPPING_TERM -60;
-        case LT(2, KC_ENTER):
+        case LT(LAYER_NAV, KC_ENTER):
             return TAPPING_TERM -70;
         default:
             return TAPPING_TERM;
