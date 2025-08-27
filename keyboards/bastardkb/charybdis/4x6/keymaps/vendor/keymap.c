@@ -57,7 +57,7 @@ enum charybdis_keymap_layers {
 };
 
 enum {
-    TD_LSFT_CW = 0
+    TD_LSFT_CW = 0,
     TD_RSFT_CW
 };
 
