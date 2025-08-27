@@ -56,9 +56,6 @@ enum charybdis_keymap_layers {
     LAYER_POINTER,
 };
 
-#define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
-#define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
-
 // enum {
 //     TD_LSFT_CW = 0,
 //     TD_RSFT_CW
@@ -76,7 +73,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_ESCAPE,      MT(MOD_LGUI, KC_A), MT(MOD_LALT, KC_S), MT(MOD_LSFT, KC_D), MT(MOD_LCTL, KC_F), KC_G,                           KC_H,                   MT(MOD_RCTL, KC_J),     MT(MOD_RSFT, KC_K), MT(MOD_RALT, KC_L), MT(MOD_RGUI, KC_SCLN), KC_QUOTE,
     KC_LSFT,        KC_Z,               KC_X,               KC_C,               KC_V,               KC_B,                           KC_N,                   KC_M,                   KC_COMMA,           KC_DOT,             KC_SLSH,               KC_RSFT,
                                                             MO(LAYER_POINTER),  KC_SPACE,           LT(LAYER_NUM, KC_DELETE),       LT(LAYER_FUN, KC_BSPC), LT(LAYER_NAV, KC_ENTER),
-                                                            XXXXXXX,            XXXXXXX,                                            TG(LAYER_GAME)
+                                                            CW_TOGG,            XXXXXXX,                                            TG(LAYER_GAME)
   ),
   [LAYER_GAME] = LAYOUT(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
