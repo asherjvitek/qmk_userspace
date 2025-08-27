@@ -35,11 +35,6 @@ static uint16_t auto_pointer_layer_timer = 0;
 #    endif // CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_THRESHOLD
 #endif     // CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_ENABLE
 
-#define LOWER MO(LAYER_LOWER)
-#define RAISE MO(LAYER_RAISE)
-#define PT_Z LT(LAYER_POINTER, KC_Z)
-#define PT_SLSH LT(LAYER_POINTER, KC_SLSH)
-
 #ifndef POINTING_DEVICE_ENABLE
 #    define DRGSCRL KC_NO
 #    define DPI_MOD KC_NO
@@ -56,24 +51,14 @@ enum charybdis_keymap_layers {
     LAYER_POINTER,
 };
 
-// enum {
-//     TD_LSFT_CW = 0,
-//     TD_RSFT_CW
-// };
-
-// tap_dance_action_t tap_dance_actions[] = {
-//     [TD_LSFT_CW] = ACTION_TAP_DANCE_DOUBLE(KC_LEFT_SHIFT, CW_TOGG),
-//     [TD_RSFT_CW] = ACTION_TAP_DANCE_DOUBLE(KC_RIGHT_SHIFT, CW_TOGG),
-// };
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [LAYER_BASE] = LAYOUT(
     KC_EQUAL,       KC_1,               KC_2,               KC_3,               KC_4,               KC_5,                           KC_6,                   KC_7,                   KC_8,               KC_9,               KC_0,                  KC_MINUS,
     KC_TAB,         KC_Q,               KC_W,               KC_E,               KC_R,               KC_T,                           KC_Y,                   KC_U,                   KC_I,               KC_O,               KC_P,                  KC_BSLS,
     KC_ESCAPE,      MT(MOD_LGUI, KC_A), MT(MOD_LALT, KC_S), MT(MOD_LSFT, KC_D), MT(MOD_LCTL, KC_F), KC_G,                           KC_H,                   MT(MOD_RCTL, KC_J),     MT(MOD_RSFT, KC_K), MT(MOD_RALT, KC_L), MT(MOD_RGUI, KC_SCLN), KC_QUOTE,
-    KC_LSFT,        KC_Z,               KC_X,               KC_C,               KC_V,               KC_B,                           KC_N,                   KC_M,                   KC_COMMA,           KC_DOT,             KC_SLSH,               KC_RSFT,
+    KC_LSFT,        KC_Z,               KC_X,               KC_C,               KC_V,               KC_B,                           KC_N,                   KC_M,                   KC_COMMA,           KC_DOT,             KC_SLSH,               KC_LSFT,
                                                             MO(LAYER_POINTER),  KC_SPACE,           LT(LAYER_NUM, KC_DELETE),       LT(LAYER_FUN, KC_BSPC), LT(LAYER_NAV, KC_ENTER),
-                                                            CW_TOGG,            XXXXXXX,                                            TG(LAYER_GAME)
+                                                            XXXXXXX,            XXXXXXX,                                            TG(LAYER_GAME)
   ),
   [LAYER_GAME] = LAYOUT(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
@@ -109,7 +94,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [LAYER_POINTER] = LAYOUT(
        QK_BOOT,  EE_CLR, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                                                                        XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, QK_BOOT,  EE_CLR,
-       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                                                                        XXXXXXX, KC_BTN4, XXXXXXX,  KC_BTN5, XXXXXXX, XXXXXXX,
+       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                                                                        XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX,
        XXXXXXX, KC_LGUI, KC_LALT, KC_LSFT, KC_LCTL, XXXXXXX,                                                                        XXXXXXX, KC_BTN1, KC_BTN3,  KC_BTN2, XXXXXXX, XXXXXXX,
        XXXXXXX, XXXXXXX, DRGSCRL, SNP_TOG, S_D_MOD, S_D_RMOD,                                                                       XXXXXXX, XXXXXXX, DPI_MOD, DPI_RMOD, XXXXXXX, XXXXXXX,
                                   XXXXXXX, XXXXXXX, XXXXXXX,                                                                        XXXXXXX, XXXXXXX,
