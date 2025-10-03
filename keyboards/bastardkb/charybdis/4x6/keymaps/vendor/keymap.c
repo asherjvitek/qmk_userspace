@@ -51,7 +51,7 @@ enum charybdis_keymap_layers {
     LAYER_POINTER,
 };
 
-#define LT_POINTER_Z = LT(LAYER_POINTER, KC_Z)
+#define LT_POINTER_Z LT(LAYER_POINTER, KC_Z)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [LAYER_BASE] = LAYOUT(
