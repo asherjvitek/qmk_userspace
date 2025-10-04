@@ -51,16 +51,16 @@ enum charybdis_keymap_layers {
     LAYER_POINTER,
 };
 
-#define LT_POINTER_Z LT(LAYER_POINTER, KC_Z)
+#define LT_LP_KC_SLASH LT(LAYER_POINTER, KC_SLSH)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [LAYER_BASE] = LAYOUT(
     KC_EQUAL,       KC_1,               KC_2,               KC_3,               KC_4,               KC_5,                           KC_6,                   KC_7,                   KC_8,               KC_9,               KC_0,                  KC_MINUS,
     KC_TAB,         KC_Q,               KC_W,               KC_E,               KC_R,               KC_T,                           KC_Y,                   KC_U,                   KC_I,               KC_O,               KC_P,                  KC_BSLS,
     KC_ESCAPE,      MT(MOD_LGUI, KC_A), MT(MOD_LALT, KC_S), MT(MOD_LSFT, KC_D), MT(MOD_LCTL, KC_F), KC_G,                           KC_H,                   MT(MOD_RCTL, KC_J),     MT(MOD_RSFT, KC_K), MT(MOD_RALT, KC_L), MT(MOD_RGUI, KC_SCLN), KC_QUOTE,
-    KC_LSFT,        LT_POINTER_Z,       KC_X,               KC_C,               KC_V,               KC_B,                           KC_N,                   KC_M,                   KC_COMMA,           KC_DOT,             KC_SLSH,               KC_LSFT,
+    KC_LSFT,        KC_Z,               KC_X,               KC_C,               KC_V,               KC_B,                           KC_N,                   KC_M,                   KC_COMMA,           KC_DOT,             LT_LP_KC_SLASH,        KC_LSFT,
                                                             KC_BTN1,            KC_SPACE,           LT(LAYER_NUM, KC_DELETE),       LT(LAYER_FUN, KC_BSPC), LT(LAYER_NAV, KC_ENTER),
-                                                            XXXXXXX,            XXXXXXX,                                            TG(LAYER_GAME)
+                                                            KC_BTN3,            KC_BTN3,                                            TG(LAYER_GAME)
   ),
   [LAYER_GAME] = LAYOUT(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
@@ -99,8 +99,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                                                                        XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX,
        XXXXXXX, KC_LGUI, KC_LALT, KC_LSFT, KC_LCTL, XXXXXXX,                                                                        XXXXXXX, KC_RCTL, KC_RSFT,  KC_RALT, KC_RGUI, XXXXXXX,
        XXXXXXX, XXXXXXX, DRGSCRL, SNP_TOG, S_D_MOD, S_D_RMOD,                                                                       XXXXXXX, XXXXXXX, DPI_MOD, DPI_RMOD, XXXXXXX, XXXXXXX,
-                                  KC_BTN1, KC_BTN3, KC_BTN2,                                                                        XXXXXXX, XXXXXXX,
-                                           XXXXXXX, XXXXXXX,                                                                        XXXXXXX
+                                  _______, _______, _______,                                                                        XXXXXXX, XXXXXXX,
+                                           _______, _______,                                                                        XXXXXXX
   ),
 };
 
@@ -109,16 +109,17 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM = LAYOUT(
   'L', 'L', 'L', 'L', 'L', 'L', 'R', 'R', 'R', 'R', 'R', 'R',
   'L', 'L', 'L', 'L', 'L', 'L', 'R', 'R', 'R', 'R', 'R', 'R',
   'L', 'L', 'L', 'L', 'L', 'L', 'R', 'R', 'R', 'R', 'R', 'R',
-                 'L', 'L', 'L', 'R', 'R',
-                      'L', 'L', 'R'
+                 '*', '*', '*', '*', '*',
+                      '*', '*', '*'
 );
 
-const uint16_t PROGMEM combo0[] = { KC_U, MT(MOD_RCTL, KC_J), COMBO_END};
-const uint16_t PROGMEM combo1[] = { KC_I, MT(MOD_RSFT, KC_K), COMBO_END};
-const uint16_t PROGMEM combo2[] = { KC_O, MT(MOD_RALT, KC_L), COMBO_END};
-const uint16_t PROGMEM combo3[] = { KC_X, KC_C, COMBO_END};
-const uint16_t PROGMEM combo4[] = { KC_C, KC_V, COMBO_END};
-const uint16_t PROGMEM combo5[] = { LT(LAYER_NAV, KC_ENTER), KC_SPACE, COMBO_END};
+const uint16_t PROGMEM combo0[] = { KC_U, MT(MOD_RCTL, KC_J), COMBO_END };
+const uint16_t PROGMEM combo1[] = { KC_I, MT(MOD_RSFT, KC_K), COMBO_END };
+const uint16_t PROGMEM combo2[] = { KC_O, MT(MOD_RALT, KC_L), COMBO_END };
+const uint16_t PROGMEM combo3[] = { KC_X, KC_C, COMBO_END };
+const uint16_t PROGMEM combo4[] = { KC_C, KC_V, COMBO_END };
+const uint16_t PROGMEM combo5[] = { LT(LAYER_NAV, KC_ENTER), KC_SPACE, COMBO_END };
+const uint16_t PROGMEM combo6[] = { KC_E, MT(MOD_LSFT, KC_D), COMBO_END };
 
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo0, KC_GRAVE),
@@ -127,6 +128,7 @@ combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo3, LCTL(KC_INSERT)),
     COMBO(combo4, LSFT(KC_INSERT)),
     COMBO(combo5, KC_APPLICATION),
+    COMBO(combo6, DRGSCRL),
 };
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
