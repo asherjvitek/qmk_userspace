@@ -36,7 +36,7 @@
 #endif // POINTING_DEVICE_ENABLE
 
 #define CHORDAL_HOLD
-#define COMBO_COUNT 6
+#define COMBO_COUNT 7
 
 #define TAPPING_TERM_PER_KEY
 
