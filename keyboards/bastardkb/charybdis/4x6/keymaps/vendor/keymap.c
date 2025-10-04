@@ -60,7 +60,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_ESCAPE,      MT(MOD_LGUI, KC_A), MT(MOD_LALT, KC_S), MT(MOD_LSFT, KC_D), MT(MOD_LCTL, KC_F), KC_G,                           KC_H,                   MT(MOD_RCTL, KC_J),     MT(MOD_RSFT, KC_K), MT(MOD_RALT, KC_L), MT(MOD_RGUI, KC_SCLN), KC_QUOTE,
     KC_LSFT,        KC_Z,               KC_X,               KC_C,               KC_V,               KC_B,                           KC_N,                   KC_M,                   KC_COMMA,           KC_DOT,             LT_LP_KC_SLASH,        KC_LSFT,
                                                             KC_BTN1,            KC_SPACE,           LT(LAYER_NUM, KC_DELETE),       LT(LAYER_FUN, KC_BSPC), LT(LAYER_NAV, KC_ENTER),
-                                                            KC_BTN3,            KC_BTN3,                                            TG(LAYER_GAME)
+                                                            KC_BTN3,            KC_BTN2,                                            TG(LAYER_GAME)
   ),
   [LAYER_GAME] = LAYOUT(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
